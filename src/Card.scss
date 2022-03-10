@@ -1,0 +1,132 @@
+@import "./index.scss";
+
+.Card {
+  width: 950px;
+  height: 400px;
+  background-color: $dark-desaturated-blue;
+  border-radius: 10px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  &-text {
+    padding: 55px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    &__title {
+      color: $white;
+      font-family: "Inter", sans-serif;
+      font-size: 3.23rem;
+      //   margin-bottom: 24px;
+
+      & span {
+        color: $soft-violet;
+      }
+    }
+
+    &__sub {
+      color: $transparent-white;
+      line-height: 1.6;
+      font-family: "Lexend Deca", sans-serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      //   margin-bottom: 15px;
+    }
+
+    &-container {
+      width: 85%;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+  }
+
+  &-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+
+    & div {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      & .stat-title {
+        color: $white;
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        font-size: 2.2rem;
+      }
+
+      & .stat-sub {
+        color: $transparent-white;
+        font-family: "Lexend Deca", sans-serif;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+    }
+  }
+
+  &-imgContainer {
+    width: 100%;
+    background-color: $soft-violet;
+    background-image: url("./images/image-header-desktop.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-blend-mode: multiply;
+    position: relative;
+
+    & .imgCover {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      background-color: hsla(277, 64%, 61%, 0.25);
+    }
+  }
+}
+
+@media (max-width: 376px) {
+  .Card {
+    grid-template-columns: 1fr;
+    text-align: center;
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+
+    &-text {
+      padding: 30px 18px;
+      gap: 25px;
+    }
+
+    &-stats {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+
+  .Card-text-container {
+    width: 100%;
+    gap: 40px;
+  }
+
+  .Card-text__title {
+    font-size: 2.9rem;
+  }
+
+  .Card-text__sub {
+    font-size: 1.5rem;
+    width: 88%;
+    margin: auto;
+  }
+
+  .Card-imgContainer {
+    height: 250px;
+    width: 100%;
+    grid-row: 1;
+  }
+}
